@@ -1,0 +1,131 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  /* color: #2d2e36; */
+  /* background: #c2ccd4; */
+  font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: #8e8f9a;
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  color: #2d2e36;
+  outline: none;
+}
+
+audio {
+  display: none;
+}
+
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+
+
+/*
+ * --- Containers & Layout ---
+ */
+
+.container-drums {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 2em 0 0 0;
+}
+
+.container-drums svg {
+  max-height: 55%;
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container-drums svg g {
+  cursor: pointer;
+}
+
+/*
+ * --- Keys ---
+ */
+
+/* #All-Keys {
+  display: none;
+} */
+
+.keys {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.key-wrap path {
+  stroke: black;
+  stroke-width: .4rem;
+  fill: rgba(0, 0, 0, 0.4);
+}
+
+.key-text {
+  font-size: 62px;
+  font-weight: bold;
+  fill: white;
+}
+
+.container-drums,
+.keys {
+  background: url('./background.jpg') bottom center;
+}
