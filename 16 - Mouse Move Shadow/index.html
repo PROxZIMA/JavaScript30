@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+
+  <style>
+    :root {
+      --text-shadow-x: -15px;
+      --text-shadow-y: 15px;
+    }
+
+    html {
+      color: black;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    h1 {
+      text-shadow: var(--text-shadow-x) var(--text-shadow-y) 0 rgba(0, 0, 0, 0.2);
+      font-size: 100px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <h1 contenteditable spellcheck="false">🔥WOAH!</h1>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
