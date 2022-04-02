@@ -13,11 +13,14 @@ body,
 html {
   margin: 0;
   padding: 0;
-  /* color: #2d2e36; */
-  /* background: #c2ccd4; */
   font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: url('./background.jpg') bottom center;
+  background-size: cover;
 }
 
 a {
@@ -74,7 +77,7 @@ kbd {
 }
 
 .container-drums svg {
-  max-height: 55%;
+  max-height: 70%;
   width: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -123,9 +126,4 @@ kbd {
   font-size: 62px;
   font-weight: bold;
   fill: white;
-}
-
-.container-drums,
-.keys {
-  background: url('./background.jpg') bottom center;
 }
