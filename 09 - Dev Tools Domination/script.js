@@ -1,9 +1,11 @@
 const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
 const makeGreen = (e) => {
-  e.style.color = '#BADA55';
-  e.style.fontSize = '50px';
+  e.currentTarget.style.color = '#BADA55';
+  e.currentTarget.style.fontSize = '50px';
 }
+
+document.getElementById('green-me')?.addEventListener('click', (e) => makeGreen(e));
 
 // clearing
 console.clear();
@@ -12,10 +14,10 @@ console.clear();
 console.log('makeGreen');
 
 // Interpolated
-console.log('%s is a function', 'makegreen');
+console.log('%s is a function -> ', 'makegreen');
 
 // Styled
-console.log('%c A green text with big font', 'color: #BADA55; font-size: 30px')
+console.log('%c A green text with big font', 'color: #BADA55; font-size: 30px');
 
 // warning!
 console.warn('Warning');
@@ -27,7 +29,7 @@ console.error('Error!!!!!');
 console.info('Information');
 
 // Testing
-console.assert('' === false, "That's not how it works")
+console.assert('' === false, "That's not how it works");
 
 // Viewing DOM Elements
 console.dir(document.querySelector('p'));
@@ -41,7 +43,7 @@ dogs.forEach(dog => {
   console.log(`He is ${dog.age} year old`);
 
   console.groupEnd();
-})
+});
 
 // counting
 console.count('z');
@@ -62,6 +64,6 @@ fetch('https://api.github.com/users/PROxZIMA')
     return resposne.json()
   })
   .then(data => {
-    console.timeEnd('Fetching data')
-    console.table(data);
+    console.timeEnd('Fetching data');
+    console.log(data);
   });
