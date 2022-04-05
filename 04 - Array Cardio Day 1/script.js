@@ -32,7 +32,7 @@ console.table(inventors.filter((inventor) => 1500 <= inventor['year'] && invento
 
 // Array.prototype.map()
 console.log(
-  "2. Give us an array of the inventors first and last names",
+  "2. Give us an array of the inventors first and last names -> ",
   inventors.map((inventor) => `${inventor['first']} ${inventor['last']}`)
 );
 
@@ -42,26 +42,27 @@ console.table(inventors.sort((a, b) => a['year'] > b['year']));
 
 // Array.prototype.reduce()
 console.log(
-  "4. How many years did all the inventors live all together?",
+  "4. How many years did all the inventors live all together? -> ",
   inventors.reduce((total, inventor) => total + (inventor['passed'] - inventor['year']), 0)
 );
 
 console.log("5. Sort the inventors by years lived");
 console.table(inventors.sort((a, b) => (a['year'] - a['passed']) < (b['year'] - b['passed'])));
 
-console.log("6. create a list of Boulevards in Paris that contain 'de' anywhere in the name\n",
+console.log("6. create a list of Boulevards in Paris that contain 'de' anywhere in the name -> \n",
   // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
   `[...document.querySelectorAll(".mw-category-group a")]
     .map(link => link.innerText)
     .filter(text => text.includes('de'))`
 );
+
 console.log(
-  "7. sort Exercise; Sort the people alphabetically by last name",
+  "7. sort Exercise; Sort the people alphabetically by last name -> ",
   people.sort((a, b) => a.split(', ')[1] > b.split(', ')[1])
 );
 
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
-console.log("8. Reduce Exercise: Sum up the instances of each of these", data);
+console.log("8. Reduce Exercise: Sum up the instances of each of these -> ", data);
 
 const defaultdict = (factory, origin) => {
   return new Proxy({ ...origin }, {
@@ -72,9 +73,9 @@ const defaultdict = (factory, origin) => {
       return dict[key]
     }
   })
-}
+};
 
-console.table({
+console.log({
   ...data.reduce((freq, vehicle) => {
     freq[vehicle]++;
     return freq;
