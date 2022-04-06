@@ -119,10 +119,9 @@ playbackRate.addEventListener('change', () => video.playbackRate = playbackRate.
 
 playerSkipper.forEach(skipper => skipper.addEventListener('click', () => skipTime(skipper.dataset.skip)));
 
-progressContainer.addEventListener('click', e => updateTime(e));
-progressContainer.addEventListener('mousemove', (e) => isSliding && updateTime(e));
-progressContainer.addEventListener('mousedown', () => isSliding = true);
+progressContainer.addEventListener('mousedown', e => { isSliding = true; updateTime(e) });
 progressContainer.addEventListener('mouseup', () => isSliding = false);
-progressContainer.addEventListener('mouseout', () => isSliding = false);
+progressContainer.addEventListener('mousemove', (e) => isSliding && updateTime(e));
+progressContainer.addEventListener('mouseleave', () => isSliding = false);
 
 fullscreen.addEventListener('click', () => makeFullscreen());
