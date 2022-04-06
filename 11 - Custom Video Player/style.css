@@ -198,6 +198,10 @@ body {
   -ms-flex-preferred-size: 0%;
   flex-basis: 0%;
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .progress__filled::after {
@@ -214,6 +218,10 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .progress__filled:hover::after {
@@ -309,6 +317,7 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: 5px;
   -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
   transition: height 0.3s;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 100px;
@@ -322,6 +331,7 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 5px;
   -webkit-transition: height 0.3s;
+  -ms-transition: height 0.3s;
   transition: height 0.3s;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 100px;
