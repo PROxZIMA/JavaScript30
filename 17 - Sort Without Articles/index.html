@@ -21,7 +21,7 @@
       font-size: 20px;
       background: white;
       width: 500px;
-      margin: auto;
+      margin: 50px auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
     }
@@ -29,6 +29,10 @@
     #bands li {
       border-bottom: 1px solid #efefef;
       padding: 20px;
+    }
+
+    #bands li:first-child {
+      list-style-type: disclosure-closed;
     }
 
     #bands li:last-child {
@@ -43,7 +47,9 @@
 </head>
 
 <body>
-  <ul id="bands"></ul>
+  <ul id="bands">
+    <li>These are sorted without the articles</li>
+  </ul>
 
   <script src="scripts.js"></script>
 </body>
