@@ -99,7 +99,7 @@ const rgbSplit = (pixels) => {
 
 const greenScreen = (pixels) => {
   const levels = {};
-  console.log(levels)
+  // console.log(levels);
 
   document.querySelectorAll('.rgb input').forEach((input) => {
     levels[input.name] = input.value;
