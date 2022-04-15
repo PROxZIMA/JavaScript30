@@ -23,14 +23,14 @@ body {
   padding: 40px;
   text-align: justify;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
-  transform: scale(0.98);
+  /* transform: scale(0.98); */
   transition: transform 0.5s;
 }
 
 header {
   text-align: center;
   height: 50vh;
-  background: url(https://source.unsplash.com/GKN6rpDr0EI/960x640) bottom center no-repeat;
+  background: url(./bg.jpeg) bottom center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@ nav a {
 
 .fixed {
   position: fixed;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
 }
 
 .fixed .logo {
