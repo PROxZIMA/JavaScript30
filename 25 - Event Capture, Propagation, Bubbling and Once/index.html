@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Understanding JavaScript's Capture</title>
+  <link rel="stylesheet" href="../helper/logToHtml.css">
+  <script src="../helper/logToHtml.js"></script>
 
   <style>
     html {
       box-sizing: border-box;
+      background-color: white;
     }
 
     *,
@@ -21,6 +24,18 @@
       padding: 100px;
     }
 
+    button {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
     .one {
       background: thistle;
     }
@@ -32,10 +47,16 @@
     .three {
       background: coral;
     }
+
+    #log-container {
+      padding: 0;
+    }
   </style>
 </head>
 
 <body class="bod">
+
+  <button>Click Me</button>
 
   <div class="one">
     <div class="two">
@@ -44,7 +65,9 @@
     </div>
   </div>
 
-  <button>Click ME</button>
+  <div id="log-container">
+    <pre id="log"></pre>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
