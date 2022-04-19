@@ -1,0 +1,108 @@
+body {
+  background-color: #fafafa;
+  margin: 50px auto;
+}
+
+body,
+body * {
+  width: fit-content;
+}
+
+#log-container {
+  overflow: auto;
+}
+
+.log-warn {
+  color: orange;
+}
+
+.log-warn::before {
+  content: '⚠️ ';
+}
+
+.log-error {
+  color: red;
+}
+
+.log-error::before {
+  content: '☠️ ';
+}
+
+.log-assert {
+  color: red;
+}
+
+.log-assert::before {
+  content: '☠️ Assertion failed: ';
+  /* Simple hack to make text red along with filter */
+  color: white;
+}
+
+.log-error::before,
+.log-assert::before {
+  -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+.log-info {
+  color: #3B88C3;
+}
+
+.log-info::before {
+  content: 'ℹ️ ';
+}
+
+.log-log {
+  color: black
+}
+
+.log-warn,
+.log-error,
+.log-assert {
+  font-weight: bold;
+}
+
+table.tftable {
+  border-collapse: collapse;
+  min-width: 40rem;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+table.tftable thead tr {
+  background-color: #009879;
+  color: #fafafa;
+  font-weight: bold;
+}
+
+table.tftable th,
+table.tftable td {
+  padding: 8px;
+}
+
+table.tftable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table.tftable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table.tftable tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+table.tftable th {
+  font-weight: bolder;
+}
+
+table.tftable tr > th:first-child {
+  text-align: left;
+}
+
+table.tftable tbody tr > th:first-child {
+  text-align: left;
+  color: #009879;
+}
