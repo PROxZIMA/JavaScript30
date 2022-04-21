@@ -1,0 +1,118 @@
+:root {
+  --hw-ratio: 0.538;
+  --margin: 7.21vw;
+
+  --width: 69.69vw;
+  --height: calc(var(--width) * var(--hw-ratio));
+
+  --big-width: 74.15vw;
+  --big-height: calc(var(--big-width) * var(--hw-ratio));
+
+  --increment: 4.46;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5rem;
+  overflow: hidden;
+}
+
+.bg-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)), url('../assets/bg2.jpg');
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  max-width: 565px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  margin-top: -5rem;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.gallery {
+  overflow: unset !important;
+  min-width: 100vw;
+}
+
+.gallery-cell {
+  margin-right: var(--margin);
+  overflow: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  top: 0 !important;
+  left: 0 !important;
+  transition: top 0.2s ease, left 0.2s ease;
+}
+
+.gallery-cell.is-selected {
+  top: calc((var(--height) - var(--big-height)) / 2) !important;
+  left: calc((var(--width) - var(--big-width)) / 2) !important;
+  z-index: 2;
+}
+
+.gallery-cell iframe {
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.gallery-cell.is-selected iframe {
+  width: var(--big-width);
+  height: var(--big-height);
+}
+
+.flickity-viewport {
+  overflow: unset !important;
+}
+
+.flickity-page-dots {
+  bottom: unset !important;
+  margin: calc(((var(--big-height) - var(--height)) / 2) + 40px) 0 0 0 !important;
+}
+
+.flickity-page-dots .dot.is-selected {
+  transform: scale(2);
+}
+
+.flickity-page-dots .dot.is-selected + .dot {
+  transform: scale(1.5);
+}
