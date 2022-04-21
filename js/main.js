@@ -41,7 +41,7 @@ flkty.on('change', (index) => {
     dots[index - 1].style.transform = "scale(1.5)";
 
   dots[index].style.transform = "scale(2)";
-  title.textContent = iframes[index].dataset.src.slice(3, -11);
+  title.textContent = iframes[index].dataset.src.slice(0, -11);
 
   if (!iframes[index].src)
     iframes[index].src = iframes[index].dataset.src
