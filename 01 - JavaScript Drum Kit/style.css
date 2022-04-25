@@ -80,6 +80,10 @@ kbd {
   max-height: 70%;
   width: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container-drums svg g {
@@ -100,6 +104,10 @@ kbd {
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-evenly;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .key {

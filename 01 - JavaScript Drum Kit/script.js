@@ -180,12 +180,12 @@ const animateKey = (key) => {
   keytl.play();
 }
 
-document.addEventListener('keydown', e => {
-  const drumKey = document.getElementById(`Key-${e.keyCode}`);
-  const key = document.getElementById(`key-${e.keyCode}`);
+const handleKeyCode = (keyCode) => {
+  const drumKey = document.getElementById(`Key-${keyCode}`);
+  const key = document.getElementById(`key-${keyCode}`);
   if (!drumKey) return;
 
-  switch (e.keyCode) {
+  switch (keyCode) {
     case 76:
       hiHat();
       break;
@@ -210,4 +210,15 @@ document.addEventListener('keydown', e => {
   }
   animateKey(drumKey);
   key.classList.add('playing');
-});
+}
+
+document.addEventListener('keydown', e => handleKeyCode(e.keyCode));
+
+const setKeyClick = (keyClass) => {
+  [...document.getElementsByClassName(keyClass)].forEach(key =>
+    key.addEventListener('click', e => handleKeyCode(parseInt(e.currentTarget.id.slice(4))))
+  );
+};
+
+setKeyClick('key');
+setKeyClick('key-wrap');
