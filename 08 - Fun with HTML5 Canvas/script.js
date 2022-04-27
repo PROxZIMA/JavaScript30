@@ -11,7 +11,7 @@ ctx.globalCompositeOperation = 'darken';
 
 let [isDrawing, lastX, lastY, hue, lineWidth, incr] = [false, 0, 0, 0, 10, 0.5];
 
-canvas.addEventListener('mousemove', e => {
+const drawCanvas = (offsetX, offsetY) => {
   if (!isDrawing) return;
 
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
@@ -23,15 +23,27 @@ canvas.addEventListener('mousemove', e => {
 
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
-  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.lineTo(offsetX, offsetY);
   ctx.stroke();
-  [lastX, lastY] = [e.offsetX, e.offsetY]; // comment this, incr = 0, lineWidth = 1 and have fun
+  [lastX, lastY] = [offsetX, offsetY]; // comment this, incr = 0, lineWidth = 1 and have fun
+};
 
-});
-
-canvas.addEventListener('mousedown', (e) => {
+const setLastXY = (x, y) => {
   isDrawing = true;
-  [lastX, lastY] = [e.offsetX, e.offsetY] // comment this, incr = 0, lineWidth = 1 and have fun
+  [lastX, lastY] = [x, y]; // comment this, incr = 0, lineWidth = 1 and have fun
+};
+
+canvas.addEventListener('mousemove', e => drawCanvas(e.offsetX, e.offsetY));
+
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  drawCanvas(e.touches[0].pageX - e.touches[0].target.offsetLeft, e.touches[0].pageY - e.touches[0].target.offsetTop);
 });
+
+canvas.addEventListener('mousedown', (e) => setLastXY(e.offsetX, e.offsetY));
+
+canvas.addEventListener('touchstart', (e) => setLastXY(e.touches[0].pageX - e.touches[0].target.offsetLeft, e.touches[0].pageY - e.touches[0].target.offsetTop));
+
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('touchend', () => isDrawing = false);
