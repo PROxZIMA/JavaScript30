@@ -46,6 +46,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cool > li {
@@ -69,6 +70,7 @@ nav ul {
 
 .trigger-enter .dropdown {
   display: block;
+  z-index: 10;
 }
 
 .trigger-enter-active .dropdown {
@@ -91,6 +93,7 @@ nav ul {
 
 .dropdownBackground.open {
   opacity: 1;
+  z-index: 5;
 }
 
 .arrow {
