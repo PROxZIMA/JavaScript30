@@ -4,20 +4,32 @@
 let dots;
 let oldIndex = 0;
 const carousel = document.querySelector('.gallery');
+const iframes = carousel.querySelectorAll('.gallery-cell iframe');
+const length = iframes.length - 1;
 const title = document.getElementById('title');
+
+iframes.forEach((frame) => {
+  frame.addEventListener('load', () => {
+    const template = document.createElement("template");
+    template.innerHTML = '<link rel="stylesheet" href="../helper/global.css">';
+    frame.contentWindow.document.head.appendChild(template.content.firstChild);
+  })
+});
+
 const flkty = new Flickity(carousel, {
   imagesLoaded: true,
   percentPosition: false,
   on: {
-    ready: () => dots = [...document.getElementsByClassName('dot')]
+    ready: () => {
+      dots = [...document.getElementsByClassName('dot')];
+      iframes[1].src = iframes[1].dataset.src;
+    }
   }
 });
 
-const iframes = carousel.querySelectorAll('.gallery-cell iframe');
-const length = iframes.length - 1;
 const docStyle = document.documentElement.style;
-const transformProp = typeof docStyle.transform == 'string' ?
-  'transform' : 'WebkitTransform';
+const transformProp = typeof docStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
+
 
 flkty.on('scroll', () => {
   flkty.slides.forEach((slide, i) => {
@@ -44,7 +56,7 @@ flkty.on('change', (index) => {
   title.textContent = iframes[index].dataset.src.slice(0, -11);
 
   if (!iframes[index].src)
-    iframes[index].src = iframes[index].dataset.src
+    iframes[index].src = iframes[index].dataset.src;
 
   if (index < length) {
     dots[index + 1].style.transform = "scale(1.5)";
