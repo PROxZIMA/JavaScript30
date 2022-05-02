@@ -3,10 +3,10 @@
   --margin: 7.21vw;
 
   --width: 69.69vw;
-  --height: calc(var(--width) * var(--hw-ratio));
+  --height: 66.66vh;
 
   --big-width: 74.15vw;
-  --big-height: calc(var(--big-width) * var(--hw-ratio));
+  --big-height: 70.96vh;
 
   --increment: 4.46;
 }
@@ -30,6 +30,7 @@ body {
   width: 100vw;
   min-height: 100%;
   text-rendering: optimizeLegibility;
+  overflow: hidden;
 }
 
 body {
@@ -38,8 +39,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 5rem;
-  overflow: hidden;
+  row-gap: calc(((var(--big-height) - var(--height)) / 2) + 40px);
 }
 
 .bg-image {
@@ -60,7 +60,7 @@ body {
   max-width: 565px;
   background: rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
-  margin-top: -5rem;
+  margin-top: calc(((var(--height) - var(--big-height)) / 2) - 56px);
   border-radius: 5px;
   text-align: center;
   position: relative;
