@@ -92,6 +92,8 @@ body {
   display: block;
   width: var(--width);
   height: var(--height);
+  border: none;
+  border-width: 0px;
   transition: width 0.2s ease, height 0.2s ease;
 }
 

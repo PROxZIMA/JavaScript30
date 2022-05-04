@@ -22,7 +22,7 @@ const flkty = new Flickity(carousel, {
   on: {
     ready: () => {
       dots = [...document.getElementsByClassName('dot')];
-      iframes[1].src = iframes[1].dataset.src;
+      iframes[1].src = iframes[1].dataset.src + '/index.html';
     }
   }
 });
@@ -53,10 +53,10 @@ flkty.on('change', (index) => {
     dots[index - 1].style.transform = "scale(1.5)";
 
   dots[index].style.transform = "scale(2)";
-  title.textContent = iframes[index].dataset.src.slice(0, -11);
+  title.textContent = iframes[index].dataset.src;
 
   if (!iframes[index].src)
-    iframes[index].src = iframes[index].dataset.src;
+    iframes[index].src = iframes[index].dataset.src + '/index.html';
 
   if (index < length) {
     dots[index + 1].style.transform = "scale(1.5)";
@@ -68,8 +68,8 @@ flkty.on('change', (index) => {
 
 flkty.on('settle', (index) => {
   if (index > 0 && !iframes[index - 1].src)
-    iframes[index - 1].src = iframes[index - 1].dataset.src;
+    iframes[index - 1].src = iframes[index - 1].dataset.src + '/index.html';
 
   if (index < length && !iframes[index + 1].src)
-    iframes[index + 1].src = iframes[index + 1].dataset.src;
+    iframes[index + 1].src = iframes[index + 1].dataset.src + '/index.html';
 });
