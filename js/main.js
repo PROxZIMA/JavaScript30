@@ -7,6 +7,7 @@ const carousel = document.querySelector('.gallery');
 const iframes = carousel.querySelectorAll('.gallery-cell iframe');
 const length = iframes.length - 1;
 const title = document.getElementById('title');
+const titleLink = document.getElementById('title_link');
 
 iframes.forEach((frame) => {
   frame.addEventListener('load', () => {
@@ -54,6 +55,7 @@ flkty.on('change', (index) => {
 
   dots[index].style.transform = "scale(2)";
   title.textContent = iframes[index].dataset.src;
+  titleLink.href = iframes[index].dataset.src + '/index.html';
 
   if (!iframes[index].src)
     iframes[index].src = iframes[index].dataset.src + '/index.html';

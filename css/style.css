@@ -44,7 +44,7 @@ body {
 
 .bg-image {
   background: linear-gradient(rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url('../assets/bg2.jpg');
+      rgba(0, 0, 0, 0.3)), url('../assets/background.jpg');
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -53,7 +53,7 @@ body {
   background-size: cover;
 }
 
-#title {
+.title_wrapper {
   color: white;
   text-decoration: none;
   font-size: 20px;
@@ -62,8 +62,18 @@ body {
   padding: 10px 20px;
   margin-top: calc(((var(--height) - var(--big-height)) / 2) - 56px);
   border-radius: 5px;
-  text-align: center;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+}
+
+.title_wrapper a {
+  background-image: url('../assets/newtab.svg');
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
 }
 
 .gallery {
